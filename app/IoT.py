@@ -3,7 +3,11 @@ from datetime import datetime
 from enums import *
 import random
 from date_generator import random_date
-from config.connection import *
+
+import sys
+sys.path.insert(0, 'C:\\Users\\pc\\OneDrive\\Documentos\\IoT-hardware-simulator\\config\\')
+from connection import Connector
+
 
 s = sched.scheduler(time.time, time.sleep)
 COLUMNS  = 'temperature, unit, ocean_name, date_time'
