@@ -1,5 +1,5 @@
 import mysql.connector
-from config import config
+from config import CONFIG
 
 class Connector:
 
@@ -15,7 +15,7 @@ class Connector:
         global cnx 
         global cursor
 
-        cnx = mysql.connector.connect(**config)
+        cnx = mysql.connector.connect(**CONFIG)
         cursor = cnx.cursor()
 
     def commit():

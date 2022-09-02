@@ -5,10 +5,9 @@ from date_generator import random_date
 import sys
 sys.path.insert(0, 'C:\\Users\\pc\\OneDrive\\Documentos\\IoT-hardware-simulator\\config\\')
 from connection import Connector
+from config import *
 
 S = sched.scheduler(time.time, time.sleep)
-COLUMNS  = 'temperature, unit, ocean_name, date_time'
-INTERVAL = 0.5
 
 class HardwareIoT:
     def read_temperature(sc):
@@ -36,6 +35,3 @@ class HardwareIoT:
 
     def break_sensor():
         return round(random.uniform(0, 10)) == 9
-
-S.enter(INTERVAL, 1, HardwareIoT.read_temperature, (S,))
-S.run()
