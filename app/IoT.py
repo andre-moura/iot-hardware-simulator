@@ -32,9 +32,9 @@ class HardwareIoT:
         if HardwareIoT.break_sensor():
             temperature = 'NULL'
 
-        VALUES = f"{temperature}, '{Unit.Celsius.value}', '{latitude}', '{latitude}', '{date_time}'"
+        VALUES = f"{temperature}, '{Unit.Celsius.value}', '{latitude}', '{longitude}', '{date_time}'"
         Connector.insert(COLUMNS, VALUES)
-        print(f'INSERT INTO tbl_temperature ({COLUMNS}) VALUES({VALUES}) \n')
+        print(f'INSERT INTO tbl_temperature ({COLUMNS}) \nVALUES({VALUES}) \n')
         
         sc.enter(INTERVAL, 1, HardwareIoT.read_temperature, (sc,))
 
