@@ -1,4 +1,4 @@
-from IoT import HardwareIoT
+from iot import HardwareIoT
 import sched, time
 
 import sys
