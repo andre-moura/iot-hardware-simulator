@@ -1,8 +1,11 @@
 from app.iot import HardwareIoT
-import sched, time
 from config.configuration import INTERVAL
+import time
+import time
 
-S = sched.scheduler(time.time, time.sleep)
 if __name__ == '__main__':
-    S.enter(INTERVAL, 1, HardwareIoT.read_temperature, (S,))
-    S.run()
+    print('Reading temperature...\n')
+
+    while True:
+        HardwareIoT.read_temperature()
+        time.sleep(INTERVAL)

@@ -8,4 +8,4 @@ CONFIG = {
 
 COLUMNS  = 'temperature'
 TABLE = 'tbl_temperature'
-INTERVAL = 0.5
+INTERVAL = 1
