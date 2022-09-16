@@ -6,10 +6,7 @@ from datetime import datetime
 
 class HardwareIoT:
     def read_temperature(sc):
-        
         temperature = "{:.2f}".format(random.uniform(21, 31))
-
-        date_time = datetime.now().strftime(DateFormat.DMY.value)
 
         if HardwareIoT.break_sensor():
             date_time = 'NULL'
@@ -17,7 +14,7 @@ class HardwareIoT:
         if HardwareIoT.break_sensor():
             temperature = 'NULL'
 
-        VALUES = f"{temperature}, '{Unit.Celsius.value}', '{date_time}'"
+        VALUES = f"{temperature}"
         Connector.insert(COLUMNS, VALUES)
         print(f'INSERT INTO {TABLE} ({COLUMNS}) \nVALUES({VALUES}) \n')
         
