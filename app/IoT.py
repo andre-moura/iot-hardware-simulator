@@ -9,9 +9,6 @@ class HardwareIoT:
         temperature = "{:.2f}".format(random.uniform(21, 31))
 
         if HardwareIoT.break_sensor():
-            date_time = 'NULL'
-
-        if HardwareIoT.break_sensor():
             temperature = 'NULL'
 
         VALUES = f"{temperature}"
