@@ -1,5 +1,5 @@
 from config.connection import Connector
-from config.configuration import INTERVAL, COLUMNS, TABLE
+from config.configuration import COLUMNS, TABLE
 import random
 
 class HardwareIoT:

@@ -1,7 +1,6 @@
 from app.iot import HardwareIoT
 from config.configuration import INTERVAL
 import time
-import time
 
 if __name__ == '__main__':
     print('Reading temperature...\n')
