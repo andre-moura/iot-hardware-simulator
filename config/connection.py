@@ -1,12 +1,12 @@
 import mysql.connector
-from config import CONFIG
+from config.configuration import CONFIG, TABLE
 
 class Connector:
 
     def insert(columns, values):
         if values and columns:
             Connector.connect()
-            insert_temperature = (f'INSERT INTO tbl_temperature ({columns}) '
+            insert_temperature = (f'INSERT INTO {TABLE} ({columns}) '
                                    f'VALUES({values})')
             cursor.execute(insert_temperature)
             Connector.commit()

@@ -1,30 +1,15 @@
-import sched, time
-from enums import *
+from app.enums import DateFormat, Unit
+from config.connection import Connector
+from config.configuration import INTERVAL, COLUMNS, TABLE
 import random
-from date_generator import random_date
-import sys
-from coordinates import generate_coordinates
-sys.path.insert(0, 'C:\\Users\\pc\\OneDrive\\Documentos\\IoT-hardware-simulator\\config\\')
-from connection import Connector
-from config import *
-
-S = sched.scheduler(time.time, time.sleep)
+from datetime import datetime
 
 class HardwareIoT:
     def read_temperature(sc):
         
         temperature = "{:.2f}".format(random.uniform(21, 31))
 
-        date_time = random_date(
-            "21/08/1980 13:40:41", 
-            "21/08/2022 13:40:41", 
-            DateFormat.DMY.value, 
-            random.random()
-        )
-
-        coordinates = generate_coordinates()
-        latitude = coordinates[0][0]
-        longitude = coordinates[0][1]
+        date_time = datetime.now().strftime(DateFormat.DMY.value)
 
         if HardwareIoT.break_sensor():
             date_time = 'NULL'
@@ -32,9 +17,9 @@ class HardwareIoT:
         if HardwareIoT.break_sensor():
             temperature = 'NULL'
 
-        VALUES = f"{temperature}, '{Unit.Celsius.value}', '{latitude}', '{longitude}', '{date_time}'"
+        VALUES = f"{temperature}, '{Unit.Celsius.value}', '{date_time}'"
         Connector.insert(COLUMNS, VALUES)
-        print(f'INSERT INTO tbl_temperature ({COLUMNS}) \nVALUES({VALUES}) \n')
+        print(f'INSERT INTO {TABLE} ({COLUMNS}) \nVALUES({VALUES}) \n')
         
         sc.enter(INTERVAL, 1, HardwareIoT.read_temperature, (sc,))
 
