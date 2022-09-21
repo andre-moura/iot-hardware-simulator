@@ -21,12 +21,12 @@ pip install virtualenv
 
 Create virtual environments for our project.
 ```bash
-virtualenv environment_name
+virtualenv virtualenv_name
 ```
 
 To activate a virtual environment, run the following command
 ```bash
-$ source virtualenv_name/bin/activate
+source virtualenv_name/bin/activate
 ```
 
 Download and install the libraries and dependencies
