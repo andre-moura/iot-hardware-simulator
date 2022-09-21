@@ -2,7 +2,7 @@
 # IoT Hardware Simulator
 I created this project with the intention of simulating an IoT temperature sensor and sending its data to a MySQL database.
 
-Built using:
+## Built using:
 
 - Python
 - MySQL
