@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/python-v3.10.7-blue"/> <img src="https://img.shields.io/badge/mysql--connector--python-v8.0.30-blue"/>
+<img src="https://img.shields.io/badge/python-v3.10.7-blue"/> <img src="https://img.shields.io/badge/mysql--connector--python-v8.0.30-blue"/> [![Dart](https://github.com/andre-moura/iot-hardware-simulator/actions/workflows/dart.yml/badge.svg?branch=main)](https://github.com/andre-moura/iot-hardware-simulator/actions/workflows/dart.yml)
 # IoT Hardware Simulator
 I created this project with the intention of simulating an IoT temperature sensor and sending its data to a MySQL database.
 
