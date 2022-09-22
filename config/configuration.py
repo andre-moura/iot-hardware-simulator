@@ -1,6 +1,6 @@
 CONFIG = {
   'user': 'root',
-  'password': 'bandtec',
+  'password': '',
   'host': '127.0.0.1',
   'database': 'db_temperature',
   'raise_on_warnings': True
@@ -8,4 +8,4 @@ CONFIG = {
 
 COLUMNS  = 'temperature'
 TABLE = 'tbl_temperature'
-INTERVAL = 1
+INTERVAL = 2
