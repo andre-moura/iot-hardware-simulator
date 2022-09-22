@@ -1,4 +1,4 @@
-from app.IoT import HardwareIoT
+from app.iot import HardwareIoT
 from config.configuration import INTERVAL
 import time
 
